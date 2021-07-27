@@ -1,0 +1,9 @@
+.input-case {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.error {
+    margin: 0;
+}
