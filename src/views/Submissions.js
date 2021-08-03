@@ -49,15 +49,6 @@ function Submissions({ list }) {
     );
 }
 const mapStateToProps = function (state) {
-    // get form data only if doesn't exist (page refresh)
-    const formDataExist = state.taxes.formInfo;
-    if (!formDataExist.inputFields.length) {
-        const taxId = state.taxes.submissionList;
-        if (taxId.length) {
-            store.dispatch(setFormData(taxId[0].taxId));
-        }
-    }
-
     return {
         list: state.taxes.submissionList
     }
