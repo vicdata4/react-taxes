@@ -7,7 +7,14 @@ const auth = require('json-server-auth');
 
 server.db = router.db;
 
-server.use(middlewares)
+server.use(middlewares);
+const rules = auth.rewriter({
+    taxes: 660,
+    submissions: 660,
+    form: 660,
+});
+
+server.use(rules)
 server.use(auth);
 server.use(router);
 server.listen(port, () => {

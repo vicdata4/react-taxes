@@ -15,14 +15,9 @@ const fetch_ = async (type, path = '') => {
 export default fetch_;
 
 const errorHandler = (response) => {
-    debugger;
     if (!response.ok) {
         if(response.statusText ===  'Unauthorized') {
-            if(/Android/i.test(navigator.userAgent)){
-                document.location.href = '/';
-              } else {
-                window.location.href = '/';
-              }
+            window.location.href = '/';
         } else {
             return { error: response.statusText, errorCode: response.status };
         }
