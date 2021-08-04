@@ -18,12 +18,12 @@ function LoginForm(props) {
       <div className="input-case">
         <label>{LOGIN.email_label}</label>
         <input placeholder="email" {...register("email", LOGIN_VALIDATORS.email)} />
-        <p className="error">{errors.email?.type === 'pattern' && LOGIN.email_error}</p>
+        <p className="error error-email">{errors.email?.type === 'pattern' && LOGIN.email_error}</p>
       </div>
       <div className="input-case">
         <label>{LOGIN.password_label}</label>
         <input placeholder="password" autoComplete="off" {...register("password", LOGIN_VALIDATORS.password )} />
-        <p className="error">{errors.password?.type === 'pattern' && LOGIN.password_error}</p>
+        <p className="error error-password">{errors.password?.type === 'pattern' && LOGIN.password_error}</p>
         <p className="error">{errors.password?.type === 'minLength' && LOGIN.password_minlength_error}</p>
         <p className="error">{errors.password?.type === 'maxLength' && LOGIN.password_maxlength_error}</p>
       </div>
